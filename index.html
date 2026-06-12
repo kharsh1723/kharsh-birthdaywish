@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday! 🎂</title>
+
+  <!-- Google Fonts: Display + Body pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       SCREEN 1: WELCOME / GIFT BOX SCREEN
+  ============================================= -->
+  <section id="welcome-screen" class="screen active">
+
+    <!-- Animated starfield background particles -->
+    <div id="particles-container" aria-hidden="true"></div>
+
+    <!-- Floating top hint text -->
+    <p class="hint-text">A surprise is waiting for you…</p>
+
+    <!-- Central gift box wrapper -->
+    <div id="gift-wrapper" role="button" tabindex="0" aria-label="Click to open your birthday surprise">
+
+      <!-- Glow ring behind the box -->
+      <div class="glow-ring" aria-hidden="true"></div>
+
+      <!-- The gift box SVG / HTML structure -->
+      <div id="gift-box" aria-hidden="true">
+        <!-- Box lid (animates up on click) -->
+        <div id="gift-lid">
+          <div class="lid-ribbon-h"></div>
+          <div class="bow">
+            <div class="bow-left"></div>
+            <div class="bow-right"></div>
+            <div class="bow-knot"></div>
+          </div>
+        </div>
+
+        <!-- Box body -->
+        <div id="gift-body">
+          <div class="body-ribbon-v"></div>
+          <!-- Sparkle burst inside the box, revealed on open -->
+          <div class="inner-sparkle" aria-hidden="true">✨</div>
+        </div>
+      </div>
+
+      <!-- Tap/click prompt -->
+      <p class="tap-prompt">Tap to open</p>
+    </div>
+  </section><!-- end #welcome-screen -->
+
+
+  <!-- =============================================
+       SCREEN 2: BIRTHDAY CELEBRATION SCREEN
+  ============================================= -->
+  <section id="celebration-screen" class="screen" aria-live="polite">
+
+    <!-- Confetti canvas (JS draws confetti here) -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- Balloons container (JS injects balloon elements) -->
+    <div id="balloons-container" aria-hidden="true"></div>
+
+    <!-- ---- Main celebration content ---- -->
+    <div id="celebration-content">
+
+      <!-- Animated "Happy Birthday" heading -->
+      <div class="hb-heading-wrapper" aria-label="Happy Birthday">
+        <h1 class="hb-line1">Happy</h1>
+        <h1 class="hb-line2">Birthday!</h1>
+        <!-- Decorative sparkle row -->
+        <div class="sparkle-row" aria-hidden="true">
+          <span>✦</span><span>✦</span><span>✦</span>
+        </div>
+      </div>
+
+      <!-- Birthday message card -->
+      <div class="message-card">
+<p class="message-to">To: <strong>My Dear Cute Sister ❤️✨</strong></p>
+        <p class="message-body">
+Happy Birthday to the most adorable, caring and wonderful sister! 🎂❤️<br><br>
+
+Today is all about celebrating you and the happiness you bring into the lives of everyone around you. Your smile can brighten even the dullest days, and your kindness makes every moment special. ✨<br><br>
+
+Thank you for being not just my sister, but also a friend, a supporter, and someone I can always count on. No matter how much time passes, you'll always have a very special place in my heart. 💖<br><br>
+
+May your day be filled with laughter, beautiful surprises, delicious cake, and countless happy memories. May this new year of your life bring you success, good health, endless happiness, and everything you've been wishing for. 🌸🎁🎈<br><br>
+
+Keep smiling, keep shining, and keep being the amazing person you are. The world is a better place because you're in it. ❤️✨<br><br>
+
+Enjoy your special day, my dear cute sister! 🎉🎂💝
+</p>
+
+        <p class="message-from">With love,<br /><strong>[Your Kukkur bhaiyu🥰]</strong></p>
+      </div><!-- end .message-card -->
+
+
+      <!-- ---- Photo Memories Gallery ---- -->
+      <div class="gallery-section">
+        <h2 class="section-title">
+          <span class="title-icon">📸</span> Memories
+        </h2>
+
+        <!--
+          PHOTO GALLERY
+          ─────────────
+          Replace the src values below with your actual image filenames.
+          All images should live in the /images/ folder next to index.html.
+          Example: if your file is "beach_trip.jpg" → src="images/beach_trip.jpg"
+          Add or remove <figure> blocks as needed.
+        -->
+        <div class="gallery-grid">
+
+          <figure class="gallery-item">
+            <img src="images/photo1.jpg" alt="Memory 1" loading="lazy" />
+            <figcaption>Memory 1</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/photo2.jpg" alt="Memory 2" loading="lazy" />
+            <figcaption>Memory 2</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/photo3.jpg" alt="Memory 3" loading="lazy" />
+            <figcaption>Memory 3</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/photo4.jpg" alt="Memory 4" loading="lazy" />
+            <figcaption>Memory 4</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/photo5.jpg" alt="Memory 5" loading="lazy" />
+            <figcaption>Memory 5</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/photo6.jpg" alt="Memory 6" loading="lazy" />
+            <figcaption>Memory 6</figcaption>
+          </figure>
+
+        </div><!-- end .gallery-grid -->
+      </div><!-- end .gallery-section -->
+
+
+      <!-- ---- Music Player ---- -->
+      <div class="music-section">
+        <h2 class="section-title">
+          <span class="title-icon">🎵</span> Your Song
+        </h2>
+
+        <!--
+          MUSIC FILE
+          ──────────
+          Replace "music/birthday.mp3" with your actual MP3 filename.
+          The file should live in the /music/ folder next to index.html.
+          Example: if your file is "our_song.mp3" → src="music/our_song.mp3"
+        -->
+        <audio id="birthday-audio" preload="none">
+          <source src="music/birthday.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+
+        <button id="play-music-btn" aria-label="Play birthday music">
+          <span class="btn-icon" aria-hidden="true">▶</span>
+          <span class="btn-label">Play Music</span>
+        </button>
+
+        <!-- Visual equalizer bars (purely decorative, animated via CSS/JS) -->
+        <div class="equalizer" id="equalizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div><!-- end .music-section -->
+
+
+      <!-- Footer -->
+      <footer class="birthday-footer">
+        <p>Made with 💜 just for you</p>
+        <p>      Your K.HArSH        </p>
+      </footer>
+
+    </div><!-- end #celebration-content -->
+  </section><!-- end #celebration-screen -->
+
+
+  <!-- =============================================
+       LIGHTBOX (for full-screen photo view)
+  ============================================= -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button id="lightbox-close" aria-label="Close photo">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p id="lightbox-caption"></p>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
